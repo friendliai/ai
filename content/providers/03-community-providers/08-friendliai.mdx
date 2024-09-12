@@ -89,25 +89,10 @@ import { friendliai } from '@friendliai/ai-provider';
 The following optional settings are available for the provider instance:
 
 - **tools** _Array_
+
 - **tools.type** _string_
 
   Optional. The [built-in tools](https://docs.friendli.ai/guides/serverless_endpoints/tools/built_in_tools) to use with the model.
-
-If you need a customized setup, you can import `createFriendliAI` from `@friendliai/ai-provider` and create a provider instance with your settings.
-
-In this example, we use the dedicated endpoint with the `createFriendliAI` function:
-
-```ts
-import { createFriendliAI } from '@friendliai/ai-provider';
-
-const friendliai = createFriendliAI({
-  baseURL: 'https://inference.friendli.ai/dedicated/v1',
-  apiKey: process.env.FRIENDLI_TOKEN,
-  teamId: process.env.FRIENDLI_TEAM_ID || 'YOUR FRIENDLIAI TEAM ID',
-});
-
-const model = friendliai('YOUR_DEDICATED_ENDPOINT_ID');
-```
 
 ## Language Models
 
@@ -137,7 +122,7 @@ const { text } = await generateText({
 })
 ```
 
-### Example: Using friendli hosted tools
+### Example: Using built-in tools
 
 <Note type="warning">
   **Builtin tools** and `@friendliai/ai-provider` are still in beta. If you
@@ -146,7 +131,7 @@ const { text } = await generateText({
 
 If you use `@friendliai/ai-provider`, you can use the [built-in tools](https://docs.friendli.ai/guides/serverless_endpoints/tools/built_in_tools) via the `tools` option.
 
-With search grounding, the model has access to the latest information using Google search. Search grounding can e.g. be used to provide answers around current events:
+Built-in tools allow models to use tools to generate better answers. For example, a `web:search` tool can provide up-to-date answers to current questions.
 
 ```ts highlight="1,8,9,10,11,12,13,14,15"
 import { friendliai } from '@friendliai/ai-provider';
