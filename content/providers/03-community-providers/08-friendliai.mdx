@@ -16,7 +16,7 @@ It creates language model objects that can be used with the `generateText`, `str
 ## Setup
 
 The Friendli Provider is available via the `@ai-sdk/openai` module as it is compatible with the OpenAI API.
-You can install it with
+You can install it with:
 
 <Tabs items={['pnpm', 'npm', 'yarn']}>
   <Tab>
@@ -60,7 +60,7 @@ const friendliai = createOpenAI({
 ### Using the `@friendliai/ai-provider` Package
 
 <Note type="warning">
-  **Builtin tools** and `@friendliai/ai-provider` are still in beta. If you
+  **Built-in tools** and `@friendliai/ai-provider` are still in beta. If you
   encounter problems, please use [`createOpenAI`](#using-the-openai-provider).
 </Note>
 
@@ -103,7 +103,7 @@ The first argument is the model id, e.g. `meta-llama-3.1-8b-instruct`.
 const model = friendliai('meta-llama-3.1-8b-instruct');
 ```
 
-### Example: generating text
+### Example: Generating text
 
 You can use FriendliAI language models to generate text with the `generateText` function:
 
@@ -125,7 +125,7 @@ const { text } = await generateText({
 ### Example: Using built-in tools
 
 <Note type="warning">
-  **Builtin tools** and `@friendliai/ai-provider` are still in beta. If you
+  **Built-in tools** and `@friendliai/ai-provider` are still in beta. If you
   encounter problems, please use [`createOpenAI`](#using-the-openai-provider).
 </Note>
 
